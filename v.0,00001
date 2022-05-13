@@ -1,0 +1,63 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+const int r = 4;
+const int c = 4;
+void Rand(int& a, int& b, int& c)
+{
+
+	a = rand() % 4;
+	b = rand() % 4;
+	c = rand() % 2;
+	if (c == 0)
+	{
+		c = 4;
+	}
+	else
+	{
+		c = 2;
+	}
+}
+
+void Start( int arr[r][c])
+{
+	int a, b, c;
+	
+	for (int i = 0; i < 5; i++)
+	{
+		Rand(a,b,c);
+
+		for (int i = 0; i < 4; i++)
+		{
+			arr[a][b] = c;
+
+		}
+	}
+}
+
+void Show(int arr[r][c])
+{
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			cout << arr[i][j] << " ";;
+		}
+		cout <<" " << endl;
+	}
+}
+
+
+
+int main()
+{
+	
+	srand(time(NULL));
+	
+	int arr[r][c]{0};
+	
+	Start(arr);
+	Show(arr);
+
+		return 0;
+}
